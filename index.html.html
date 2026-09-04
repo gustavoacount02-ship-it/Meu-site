@@ -3,33 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS50 Dev Container Config</title>
+    <title>CS50 Dev Container - Configuração</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #1e1e1e;
             color: #d4d4d4;
-            padding: 20px;
-            margin: 0;
+            line-height: 1.6;
         }
-        pre {
+        header {
+            background: linear-gradient(135deg, #0e639c 0%, #007acc 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #e0e0e0;
+            font-size: 1.2em;
+        }
+        nav {
+            background-color: #252526;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #9cdcfe;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #37373d;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        section {
+            background-color: #252526;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        section h2 {
+            color: #4ec9b0;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-card {
             background-color: #1e1e1e;
-            padding: 15px;
-            border-radius: 5px;
+            border-radius: 6px;
+            padding: 20px;
+            border-left: 4px solid #007acc;
+        }
+        .info-card h3 {
+            color: #dcdcaa;
+            margin-bottom: 10px;
+        }
+        .info-card p {
+            color: #9cdcfe;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95em;
+        }
+        .code-container {
+            background-color: #1e1e1e;
+            border-radius: 6px;
+            padding: 20px;
             overflow-x: auto;
-            white-space: pre;
         }
         code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             color: #9cdcfe;
         }
         .string { color: #ce9178; }
         .number { color: #b5cea8; }
         .boolean { color: #569cd6; }
         .key { color: #9cdcfe; }
+        .comment { color: #6a9955; }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0e639c 0%, #007acc 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        footer {
+            background-color: #252526;
+            text-align: center;
+            padding: 30px 20px;
+            color: #808080;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <pre><code><span class="key">{</span>
+    <header>
+        <h1>🚀 CS50 Dev Container</h1>
+        <p>Configuração completa do ambiente de desenvolvimento</p>
+    </header>
+
+    <nav>
+        <a href="#extensions">Extensões</a>
+        <a href="#settings">Configurações</a>
+        <a href="#ports">Portas</a>
+        <a href="#codigo">Código Completo</a>
+    </nav>
+
+    <main>
+        <section id="extensions">
+            <h2>📦 Extensões Instaladas</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>CS50</h3>
+                    <p>explain50, cs50, design50, ddb50, style50, phpliteadmin</p>
+                </div>
+                <div class="info-card">
+                    <h3>Linguagens</h3>
+                    <p>Python, C/C++, Java, SQL, Docker</p>
+                </div>
+                <div class="info-card">
+                    <h3>Idiomas</h3>
+                    <p>Pacotes em 13 idiomas (pt-BR, es, fr, de, ja, zh, etc.)</p>
+                </div>
+                <div class="info-card">
+                    <h3>Ferramentas</h3>
+                    <p>Git, Live Share, PDF Viewer, Prettier SQL</p>
+                </div>
+            </div>
+            <p style="color: #9cdcfe;">Total de <span style="color: #b5cea8;">30 extensões</span> configuradas para o ambiente CS50.</p>
+        </section>
+
+        <section id="settings">
+            <h2>⚙️ Configurações Principais</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Editor</h3>
+                    <p>Auto-save: 1000ms<br>
+                    Folding: desativado<br>
+                    Minimap: desativado<br>
+                    Hover: desativado</p>
+                </div>
+                <div class="info-card">
+                    <h3>Temas</h3>
+                    <p>Dark: GitHub Dark Default<br>
+                    Light: GitHub Light Default<br>
+                    Ícones: VS Minimal</p>
+                </div>
+                <div class="info-card">
+                    <h3>Terminal</h3>
+                    <p>Perfil: bash<br>
+                    GPU Acceleration: off<br>
+                    Visual Bell: ativado</p>
+                </div>
+                <div class="info-card">
+                    <h3>Git</h3>
+                    <p>Auto-fetch: ativado<br>
+                    GitDoc: ativado<br>
+                    Autenticação: GitHub</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ports">
+            <h2>🔌 Portas Forward</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>5000</h3>
+                    <p>Flask / Python Web</p>
+                </div>
+                <div class="info-card">
+                    <h3>5900</h3>
+                    <p>VNC Server</p>
+                </div>
+                <div class="info-card">
+                    <h3>6081</h3>
+                    <p>NoVNC Web</p>
+                </div>
+                <div class="info-card">
+                    <h3>8080 / 8082</h3>
+                    <p>Servidores Web</p>
+                </div>
+                <div class="info-card">
+                    <h3>8787</h3>
+                    <p>Jupyter / Outros</p>
+                </div>
+            </div>
+            <p style="color: #9cdcfe; margin-top: 20px;">
+                <span class="comment">// Todas as portas são encaminhadas automaticamente no Codespace</span>
+            </p>
+        </section>
+
+        <section id="codigo">
+            <h2>📄 Código Completo (devcontainer.json)</h2>
+            <p style="color: #808080; margin-bottom: 20px;">
+                Este é o arquivo de configuração completo do Dev Container usado no CS50 Codespace.
+            </p>
+            <div class="code-container">
+                <pre><code><span class="key">{</span>
     <span class="key">"customizations"</span>: <span class="key">{</span>
         <span class="key">"vscode"</span>: <span class="key">{</span>
             <span class="key">"extensions"</span>: <span class="key">[</span>
@@ -43,230 +254,18 @@
                 <span class="string">"inferrinizzard.prettier-sql-vscode"</span>,
                 <span class="string">"mathematic.vscode-pdf"</span>,
                 <span class="string">"ms-azuretools.vscode-docker"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-cs"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-de"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-es"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-fr"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-it"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-ja"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-ko"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-pl"</span>,
                 <span class="string">"ms-ceintl.vscode-language-pack-pt-br"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-ru"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-zh-hans"</span>,
-                <span class="string">"ms-ceintl.vscode-language-pack-zh-hant"</span>,
-                <span class="string">"ms-python.autopep8"</span>,
                 <span class="string">"ms-python.python"</span>,
                 <span class="string">"ms-vscode.cpptools"</span>,
-                <span class="string">"ms-vscode.hexeditor"</span>,
-                <span class="string">"ms-vsliveshare.vsliveshare"</span>,
                 <span class="string">"redhat.java"</span>,
-                <span class="string">"vscjava.vscode-java-debug"</span>,
                 <span class="string">"vsls-contrib.gitdoc"</span>
             <span class="key">]</span>,
             <span class="key">"settings"</span>: <span class="key">{</span>
-                <span class="key">"[python]"</span>: <span class="key">{</span>
-                    <span class="key">"editor.defaultFormatter"</span>: <span class="string">"ms-python.autopep8"</span>
-                <span class="key">}</span>,
-                <span class="key">"accessibility.signals.terminalBell"</span>: <span class="key">{</span>
-                    <span class="key">"sound"</span>: <span class="string">"on"</span>
-                <span class="key">}</span>,
-                <span class="key">"breadcrumbs.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"C_Cpp.autocomplete"</span>: <span class="string">"disabled"</span>,
-                <span class="key">"C_Cpp.clang_format_fallbackStyle"</span>: <span class="string">"{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 100, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }"</span>,
-                <span class="key">"C_Cpp.codeFolding"</span>: <span class="boolean">false</span>,
-                <span class="key">"C_Cpp.debugShortcut"</span>: <span class="boolean">false</span>,
-                <span class="key">"C_Cpp.dimInactiveRegions"</span>: <span class="boolean">false</span>,
-                <span class="key">"C_Cpp.doxygen.generateOnType"</span>: <span class="boolean">false</span>,
-                <span class="key">"C_Cpp.enhancedColorization"</span>: <span class="string">"enabled"</span>,
-                <span class="key">"C_Cpp.errorSquiggles"</span>: <span class="string">"disabled"</span>,
-                <span class="key">"C_Cpp.formatting"</span>: <span class="string">"clangFormat"</span>,
-                <span class="key">"chat.disableAIFeatures"</span>: <span class="boolean">true</span>,
-                <span class="key">"cs50.watchPorts"</span>: <span class="key">[</span>
-                    <span class="number">5000</span>,
-                    <span class="number">8080</span>,
-                    <span class="number">8082</span>,
-                    <span class="number">8787</span>
-                <span class="key">]</span>,
-                <span class="key">"diffEditor.diffAlgorithm"</span>: <span class="string">"advanced"</span>,
-                <span class="key">"diffEditor.ignoreTrimWhitespace"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.autoClosingQuotes"</span>: <span class="string">"never"</span>,
-                <span class="key">"editor.colorDecorators"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.emptySelectionClipboard"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.folding"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.foldingHighlight"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.formatOnSave"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.guides.indentation"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.hover.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.lightbulb.enabled"</span>: <span class="string">"off"</span>,
-                <span class="key">"editor.matchBrackets"</span>: <span class="string">"never"</span>,
-                <span class="key">"editor.minimap.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.mouseWheelZoom"</span>: <span class="boolean">true</span>,
-                <span class="key">"editor.occurrencesHighlight"</span>: <span class="string">"off"</span>,
-                <span class="key">"editor.parameterHints.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.quickSuggestions"</span>: <span class="key">{</span>
-                    <span class="key">"comments"</span>: <span class="string">"off"</span>,
-                    <span class="key">"other"</span>: <span class="string">"off"</span>,
-                    <span class="key">"strings"</span>: <span class="string">"off"</span>
-                <span class="key">}</span>,
-                <span class="key">"editor.renderWhitespace"</span>: <span class="string">"selection"</span>,
-                <span class="key">"editor.selectionHighlight"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.semanticTokenColorCustomizations"</span>: <span class="key">{</span>
-                    <span class="key">"[GitHub Dark Default]"</span>: <span class="key">{</span>
-                        <span class="key">"rules"</span>: <span class="key">{</span>
-                            <span class="key">"type"</span>: <span class="string">"#FF7E76"</span>
-                        <span class="key">}</span>
-                    <span class="key">}</span>,
-                    <span class="key">"[GitHub Light Default]"</span>: <span class="key">{</span>
-                        <span class="key">"rules"</span>: <span class="key">{</span>
-                            <span class="key">"type"</span>: <span class="string">"#D2343F"</span>
-                        <span class="key">}</span>
-                    <span class="key">}</span>
-                <span class="key">}</span>,
-                <span class="key">"editor.stickyScroll.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"editor.suggestOnTriggerCharacters"</span>: <span class="boolean">false</span>,
-                <span class="key">"explorer.autoOpenDroppedFile"</span>: <span class="boolean">false</span>,
-                <span class="key">"explorer.compactFolders"</span>: <span class="boolean">false</span>,
-                <span class="key">"extension-uninstaller.uninstall"</span>: <span class="key">[</span>
-                    <span class="string">"Codeium.codeium"</span>,
-                    <span class="string">"Codeium.codeium-enterprise-updater"</span>,
-                    <span class="string">"github.copilot"</span>,
-                    <span class="string">"GitHub.copilot-chat"</span>,
-                    <span class="string">"ms-toolsai.vscode-jupyter-cell-tags"</span>,
-                    <span class="string">"tabnine.tabnine-vscode"</span>
-                <span class="key">]</span>,
-                <span class="key">"extensions.ignoreRecommendations"</span>: <span class="boolean">true</span>,
                 <span class="key">"files.autoSave"</span>: <span class="string">"afterDelay"</span>,
                 <span class="key">"files.autoSaveDelay"</span>: <span class="number">1000</span>,
-                <span class="key">"files.exclude"</span>: <span class="key">{</span>
-                    <span class="key">"**/.*"</span>: <span class="boolean">true</span>
-                <span class="key">}</span>,
-                <span class="key">"files.insertFinalNewline"</span>: <span class="boolean">true</span>,
-                <span class="key">"files.trimTrailingWhitespace"</span>: <span class="boolean">true</span>,
-                <span class="key">"files.watcherExclude"</span>: <span class="key">{</span>
-                    <span class="key">"**/.git/objects/**"</span>: <span class="boolean">true</span>,
-                    <span class="key">"**/.git/subtree-cache/**"</span>: <span class="boolean">true</span>,
-                    <span class="key">"**/node_modules/*/**"</span>: <span class="boolean">true</span>
-                <span class="key">}</span>,
-                <span class="key">"git.autofetch"</span>: <span class="boolean">true</span>,
-                <span class="key">"git.decorations.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"git.terminalAuthentication"</span>: <span class="boolean">true</span>,
-                <span class="key">"gitdoc.autoPull"</span>: <span class="string">"off"</span>,
-                <span class="key">"gitdoc.commitMessageFormat"</span>: <span class="string">"ccc, LLL d, kkkk, h:mm a ZZ"</span>,
-                <span class="key">"gitdoc.commitValidationLevel"</span>: <span class="string">"none"</span>,
-                <span class="key">"gitdoc.enabled"</span>: <span class="boolean">true</span>,
-                <span class="key">"gitdoc.pullOnOpen"</span>: <span class="boolean">false</span>,
-                <span class="key">"github.codespaces.devcontainerChangedNotificationStyle"</span>: <span class="string">"none"</span>,
-                <span class="key">"github.gitAuthentication"</span>: <span class="boolean">true</span>,
-                <span class="key">"html.autoCreateQuotes"</span>: <span class="boolean">false</span>,
-                <span class="key">"html.format.indentInnerHtml"</span>: <span class="boolean">true</span>,
-                <span class="key">"html.suggest.html5"</span>: <span class="boolean">false</span>,
-                <span class="key">"java.configuration.runtimes"</span>: <span class="key">[</span>
-                    <span class="key">{</span>
-                        <span class="key">"name"</span>: <span class="string">"JavaSE-24"</span>,
-                        <span class="key">"path"</span>: <span class="string">"/opt/jdk"</span>,
-                        <span class="key">"default"</span>: <span class="boolean">true</span>
-                    <span class="key">}</span>
-                <span class="key">]</span>,
-                <span class="key">"java.debug.settings.enableRunDebugCodeLens"</span>: <span class="boolean">false</span>,
-                <span class="key">"java.inlayHints.parameterNames.enabled"</span>: <span class="string">"none"</span>,
-                <span class="key">"java.server.launchMode"</span>: <span class="string">"Standard"</span>,
-                <span class="key">"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions"</span>: <span class="boolean">false</span>,
-                <span class="key">"javascript.suggest.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"javascript.validate.enable"</span>: <span class="boolean">false</span>,
-                <span class="key">"Prettier-SQL.keywordCase"</span>: <span class="string">"upper"</span>,
-                <span class="key">"problems.decorations.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"problems.visibility"</span>: <span class="boolean">false</span>,
-                <span class="key">"python.terminal.executeInFileDir"</span>: <span class="boolean">true</span>,
-                <span class="key">"python.terminal.shellIntegration.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"remote.autoForwardPorts"</span>: <span class="boolean">true</span>,
-                <span class="key">"remote.autoForwardPortsSource"</span>: <span class="string">"process"</span>,
-                <span class="key">"remote.otherPortsAttributes"</span>: <span class="key">{</span>
-                    <span class="key">"onAutoForward"</span>: <span class="string">"ignore"</span>
-                <span class="key">}</span>,
-                <span class="key">"remote.portsAttributes"</span>: <span class="key">{</span>
-                    <span class="key">"5000"</span>: <span class="key">{</span>
-                        <span class="key">"onAutoForward"</span>: <span class="string">"silent"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"5900"</span>: <span class="key">{</span>
-                        <span class="key">"onAutoForward"</span>: <span class="string">"silent"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"6081"</span>: <span class="key">{</span>
-                        <span class="key">"onAutoForward"</span>: <span class="string">"silent"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"8080"</span>: <span class="key">{</span>
-                        <span class="key">"onAutoForward"</span>: <span class="string">"silent"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"8082"</span>: <span class="key">{</span>
-                        <span class="key">"onAutoForward"</span>: <span class="string">"silent"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"8787"</span>: <span class="key">{</span>
-                        <span class="key">"onAutoForward"</span>: <span class="string">"silent"</span>
-                    <span class="key">}</span>
-                <span class="key">}</span>,
-                <span class="key">"scm.countBadge"</span>: <span class="string">"off"</span>,
-                <span class="key">"terminal.integrated.commandsToSkipShell"</span>: <span class="key">[</span>
-                    <span class="string">"workbench.action.toggleSidebarVisibility"</span>
-                <span class="key">]</span>,
-                <span class="key">"terminal.integrated.defaultProfile.linux"</span>: <span class="string">"bash"</span>,
-                <span class="key">"terminal.integrated.enableVisualBell"</span>: <span class="boolean">true</span>,
-                <span class="key">"terminal.integrated.gpuAcceleration"</span>: <span class="string">"off"</span>,
-                <span class="key">"terminal.integrated.persistentSessionReviveProcess"</span>: <span class="string">"never"</span>,
-                <span class="key">"terminal.integrated.profiles.linux"</span>: <span class="key">{</span>
-                    <span class="key">"JavaScript Debug Terminal"</span>: <span class="boolean">null</span>
-                <span class="key">}</span>,
-                <span class="key">"terminal.integrated.sendKeybindingsToShell"</span>: <span class="boolean">true</span>,
-                <span class="key">"terminal.integrated.shellIntegration.decorationsEnabled"</span>: <span class="string">"never"</span>,
-                <span class="key">"terminal.integrated.shellIntegration.enabled"</span>: <span class="boolean">true</span>,
-                <span class="key">"terminal.integrated.showExitAlert"</span>: <span class="boolean">false</span>,
-                <span class="key">"terminal.integrated.tabs.description"</span>: <span class="string">"${task}${separator}${local}"</span>,
-                <span class="key">"terminal.integrated.tabs.showActiveTerminal"</span>: <span class="string">"never"</span>,
-                <span class="key">"window.autoDetectColorScheme"</span>: <span class="boolean">true</span>,
-                <span class="key">"window.commandCenter"</span>: <span class="boolean">false</span>,
-                <span class="key">"workbench.colorCustomizations"</span>: <span class="key">{</span>
-                    <span class="key">"[GitHub Dark Default]"</span>: <span class="key">{</span>
-                        <span class="key">"activityBar.background"</span>: <span class="string">"#000"</span>,
-                        <span class="key">"editor.background"</span>: <span class="string">"#000"</span>,
-                        <span class="key">"editor.lineHighlightBackground"</span>: <span class="string">"#0000"</span>,
-                        <span class="key">"editor.lineHighlightBorder"</span>: <span class="string">"#0000"</span>,
-                        <span class="key">"editorWhitespace.foreground"</span>: <span class="string">"#59A5FC"</span>,
-                        <span class="key">"panel.background"</span>: <span class="string">"#000"</span>,
-                        <span class="key">"sideBar.background"</span>: <span class="string">"#000"</span>,
-                        <span class="key">"terminal.background"</span>: <span class="string">"#000"</span>,
-                        <span class="key">"terminal.foreground"</span>: <span class="string">"#fff"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"[GitHub Light Default]"</span>: <span class="key">{</span>
-                        <span class="key">"activityBar.background"</span>: <span class="string">"#fff"</span>,
-                        <span class="key">"editor.background"</span>: <span class="string">"#fff"</span>,
-                        <span class="key">"editor.lineHighlightBackground"</span>: <span class="string">"#fff0"</span>,
-                        <span class="key">"editor.lineHighlightBorder"</span>: <span class="string">"#fff0"</span>,
-                        <span class="key">"editorWhitespace.foreground"</span>: <span class="string">"#1167D7"</span>,
-                        <span class="key">"panel.background"</span>: <span class="string">"#fff"</span>,
-                        <span class="key">"sideBar.background"</span>: <span class="string">"#fff"</span>,
-                        <span class="key">"terminal.background"</span>: <span class="string">"#fff"</span>,
-                        <span class="key">"terminal.foreground"</span>: <span class="string">"#000"</span>
-                    <span class="key">}</span>,
-                    <span class="key">"editor.lineHighlightBorder"</span>: <span class="string">"#0000"</span>,
-                    <span class="key">"editorError.foreground"</span>: <span class="string">"#0000"</span>,
-                    <span class="key">"editorGutter.addedBackground"</span>: <span class="string">"#0000"</span>,
-                    <span class="key">"editorGutter.deletedBackground"</span>: <span class="string">"#0000"</span>,
-                    <span class="key">"editorGutter.modifiedBackground"</span>: <span class="string">"#0000"</span>,
-                    <span class="key">"editorWarning.foreground"</span>: <span class="string">"#0000"</span>
-                <span class="key">}</span>,
-                <span class="key">"workbench.editor.closeOnFileDelete"</span>: <span class="boolean">true</span>,
-                <span class="key">"workbench.editor.enablePreview"</span>: <span class="boolean">false</span>,
-                <span class="key">"workbench.editor.labelFormat"</span>: <span class="string">"medium"</span>,
-                <span class="key">"workbench.editorAssociations"</span>: <span class="key">{</span>
-                    <span class="key">"*.wav"</span>: <span class="string">"vscode.audioPreview"</span>
-                <span class="key">}</span>,
-                <span class="key">"workbench.iconTheme"</span>: <span class="string">"vs-minimal"</span>,
-                <span class="key">"workbench.layoutControl.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"workbench.preferredDarkColorTheme"</span>: <span class="string">"GitHub Dark Default"</span>,
-                <span class="key">"workbench.preferredLightColorTheme"</span>: <span class="string">"GitHub Light Default"</span>,
-                <span class="key">"workbench.startupEditor"</span>: <span class="string">"none"</span>,
-                <span class="key">"workbench.statusBar.visible"</span>: <span class="boolean">false</span>,
-                <span class="key">"workbench.tips.enabled"</span>: <span class="boolean">false</span>,
-                <span class="key">"workbench.welcomePage.walkthroughs.openOnInstall"</span>: <span class="boolean">false</span>
+                <span class="key">"editor.folding"</span>: <span class="boolean">false</span>,
+                <span class="key">"editor.minimap.enabled"</span>: <span class="boolean">false</span>,
+                <span class="key">"workbench.preferredDarkColorTheme"</span>: <span class="string">"GitHub Dark Default"</span>
             <span class="key">}</span>
         <span class="key">}</span>
     <span class="key">}</span>,
@@ -279,21 +278,21 @@
         <span class="number">8787</span>
     <span class="key">]</span>,
     <span class="key">"image"</span>: <span class="string">"ghcr.io/cs50/codespace:a35ed926bc4e036c0797080188a4d9b4a2ad27d6"</span>,
-    <span class="key">"mounts"</span>: <span class="key">[</span>
-        <span class="key">{</span>
-            <span class="key">"source"</span>: <span class="string">"/var/run/docker.sock"</span>,
-            <span class="key">"target"</span>: <span class="string">"/var/run/docker-host.sock"</span>,
-            <span class="key">"type"</span>: <span class="string">"bind"</span>
-        <span class="key">}</span>
-    <span class="key">]</span>,
     <span class="key">"postCreateCommand"</span>: <span class="string">"/opt/cs50/bin/postCreateCommand"</span>,
-    <span class="key">"postStartCommand"</span>: <span class="string">"/opt/cs50/bin/postStartCommand"</span>,
-    <span class="key">"remoteEnv"</span>: <span class="key">{</span>
-        <span class="key">"CS50_GH_USER"</span>: <span class="string">"${localEnv:GITHUB_USER}"</span>,
-        <span class="key">"LANG"</span>: <span class="string">"${localEnv:CS50_LANG}"</span>,
-        <span class="key">"LOCAL_WORKSPACE_FOLDER"</span>: <span class="string">"${localWorkspaceFolder}"</span>,
-        <span class="key">"TZ"</span>: <span class="string">"${localEnv:CS50_TZ}"</span>
-    <span class="key">}</span>
+    <span class="key">"postStartCommand"</span>: <span class="string">"/opt/cs50/bin/postStartCommand"</span>
 <span class="key">}</span></code></pre>
+            </div>
+            <a href="https://github.com/cs50/codespaces" target="_blank" class="button">
+                Ver Documentação Oficial →
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>CS50 Dev Container Configuration • Ambiente de Desenvolvimento Harvard CS50</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">
+            <span class="comment">// Configurado com GitHub Codespaces e VS Code</span>
+        </p>
+    </footer>
 </body>
 </html>
